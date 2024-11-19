@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holiday Finder</title>
     <style>
+        .box{
+            padding-left: 60px;            ;
+            box-shadow:10px 10px 50px 0px  rgba(0, 0, 0, 0.5);
+        }
         #message{
+        align-self: center;
             margin: 20px;
             background-color: #90fe42;
             border: 2px solid black;
             font-size: 50px;
             font-weight: bolder;
-            transform: translateX(50px);
+            /* transform: rotate(4deg); */
             transition: tramsform 0.5s;
             margin-right: 100px;
             font-style: italic;
+            box-shadow:10px 10px 50px 0px  rgba(0, 0, 0, 0.5);
     }
     </style>
 </head>
 <body>
-    <marquee id="message">Hello World</marquee>
+    <div class="box">
+        <marquee id="message">Hello World</marquee>
+    </div>
+    <div id="root"></div>
     <script>
         const dt = new Date();
         const month = dt.getMonth();
@@ -66,7 +75,12 @@
             // the el.innerHTML = msg override the 'Hello World' in the HTML code..........!!!!!!!!
             el.innerHTML = msg;
 
-
+const house = {sqft: 800, bdRooms: 2, bthRooms:1};
+let houseDetails = '<h2> Information about this house </h2>';
+for (let prop in house){
+    houseDetails = `${houseDetails} <br>${prop}: ${house[prop]}<br>`;
+document.getElementById('root').innerHTML = houseDetails
+}
     </script>
 </body>
 </html>
