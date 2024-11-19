@@ -7,7 +7,7 @@
     <style>
         .box{
             padding-left: 60px;            ;
-            box-shadow:10px 10px 50px 0px  rgba(0, 0, 0, 0.5);
+            box-shadow:10px 10px 20px 0px  rgba(0, 0, 0, 0.5);
         }
         #message{
         align-self: center;
@@ -20,7 +20,23 @@
             transition: tramsform 0.5s;
             margin-right: 100px;
             font-style: italic;
-            box-shadow:10px 10px 50px 0px  rgba(0, 0, 0, 0.5);
+            box-shadow:10px 10px 20px 0px  rgba(0, 0, 0, 0.5);
+    }
+    .common{
+        border: 2px solid black;
+        margin: 20px;
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 250px;
+        flex-direction: column; */
+        display: grid;
+        place-items: center;
+        padding-bottom: 40px;
+        
+    }
+    #Numguess{
+        border: 2px solid black;
     }
     </style>
 </head>
@@ -28,7 +44,8 @@
     <div class="box">
         <marquee id="message">Hello World</marquee>
     </div>
-    <div id="root"></div>
+    <div id="root" class="common"></div>
+    <div id="Numguess" class="common"></div>
     <script>
         const dt = new Date();
         const month = dt.getMonth();
@@ -81,6 +98,17 @@ for (let prop in house){
     houseDetails = `${houseDetails} <br>${prop}: ${house[prop]}<br>`;
 document.getElementById('root').innerHTML = houseDetails
 }
+
+let guessNumber = 0;
+let numberToGuess = 71;
+let guess;
+while(guess != numberToGuess){
+    guess = Math.floor(Math.random()*100);
+    guessNumber++;
+}
+document.getElementById('Numguess').innerHTML = `
+<h2> I guessed it! </h2>
+<p> It only took me ${guessNumber} guesses!</p>`
     </script>
 </body>
 </html>
