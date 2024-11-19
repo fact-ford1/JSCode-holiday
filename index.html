@@ -6,43 +6,64 @@
     <title>Holiday Finder</title>
     <style>
         #message{
-            padding: 20px;
             margin: 20px;
             background-color: #90fe42;
             border: 2px solid black;
             font-size: 50px;
-            font-weight:bolder;
+            font-weight: bolder;
             transform: translateX(50px);
-            transition:tramsform 0.5s;
-        }
+            transition: tramsform 0.5s;
+            margin-right: 100px;
+            font-style: italic;
+    }
     </style>
 </head>
 <body>
-    <marquee id="message"></marquee>
+    <marquee id="message">Hello World</marquee>
     <script>
         const dt = new Date();
         const month = dt.getMonth();
         let msg;
         switch(month){
-            case 0:
-                msg = 'January 4 is National Spaghetti Day';
-                break;
             case 1:
-                msg = 'February 9 is National Pizza Day';
+                msg = 'January';
                 break;
             case 2:
-                msg = 'March 26 is National Spinach Day';
+                msg = 'February';
                 break;
             case 3:
-                msg = 'April 26 is National Pretzel Day';
+                msg = 'March';
                 break;
             case 4:
-                msg = '19 November is My birthday';
+                msg = 'April';
+                break;
+            case 5:
+                msg = 'May';
+                break;
+            case 6:
+                msg = 'June';
+                break;
+            case 7:
+                msg = 'July';
+                break;
+            case 8:
+                msg = 'August';
+                break;
+            case 9:
+                msg = 'September';
+                break;
+            case 10:
+                msg = 'October';
+                break;
+            case 11:
+                msg = 'November';
                 break;
             default:
-                msg = 'No holidays this Month.';
+                msg = 'December';
             }
             const el = document.getElementById('message');
+
+            // the el.innerHTML = msg override the 'Hello World' in the HTML code..........!!!!!!!!
             el.innerHTML = msg;
 
 
